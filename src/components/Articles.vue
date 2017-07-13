@@ -7,7 +7,7 @@ div.inner
 			header
 				h1: router-link(v-bind:to="'/article/'+article.slug") {{article.title}}
 				p {{ article.subtitle }}
-			p {{article.body}}
+			p(v-html="article.body")
 		span.image.object
 			img(v-bind:src='article.image', v-bind:alt='article.title')
 

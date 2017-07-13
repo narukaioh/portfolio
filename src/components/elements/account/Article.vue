@@ -12,7 +12,7 @@ div.inner
 		select(v-model="article.category",)
 			option Selecione uma categoria
 			option(v-for="category in categories" v-bind:value="category.slug") {{ category.name }}
-	p: textarea(placeholder="Digite seu artigo" v-model="article.body")
+	p: editor(v-model="article.body")
 
 	button(v-on:click="addArticle(article)") Enviar
 </template>
@@ -22,6 +22,7 @@ div.inner
 import Header from '../common/Header.vue'
 import { addArticle } from '../../../services/articles'
 import { listCategories } from '../../../services/categories'
+import { VueEditor } from 'vue2-quill-editor'
 
 export default {
 	data () {
@@ -55,7 +56,8 @@ export default {
 		}
 	},
 	components: {
-		'top': Header
+		'top': Header,
+		'editor': VueEditor
 	}
 }
 </script>

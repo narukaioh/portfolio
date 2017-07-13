@@ -13,6 +13,11 @@ import Features from './elements/home/Features.vue'
 import Portfolio from './elements/home/Portfolio.vue'
 
 export default {
+	data (){
+		return {
+			content: 'Algo aqui!'
+		}
+	},
 	components: {
 		'top': Header,
 		'main-article': MainArticle,

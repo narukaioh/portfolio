@@ -10,7 +10,7 @@ div.inner
 					div(class="12u$")
 						input(type="text", placeholder="Nome da Categoria" v-model="category.name")
 					div(class="12u$")
-						textarea(placeholder="Descrição da categoria" v-model="category.description")
+						editor(v-model="category.description")
 					div(class="6u")
 						button(v-on:click="saveCategory(category)", type="button") Salvar
 				
@@ -19,6 +19,7 @@ div.inner
 <script>
 
 import { addCategory } from '../../../services/categories'
+import { VueEditor } from 'vue2-quill-editor'
 
 export default {
 
@@ -42,7 +43,9 @@ export default {
 			}
 		}
 	},
-	components: {}
+	components: {
+		'editor': VueEditor
+	}
 
 }
 </script>
